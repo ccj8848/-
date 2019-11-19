@@ -24,18 +24,21 @@ public class test {
 			}
 		}
 		System.out.println(new StringBuilder(str2).toString());
-		String a = "һ";
+		try {
+		String a = "一";
 		int count = count(str, a);
 		System.out.println(a +  "在其中出现的次数为:"
 				+ count);
-	}
+		}catch (NullPointerException e) {
+			System.out.println("参数不能为空");
+			e.printStackTrace();
+		}
 
 	public static int count(StringBuilder str, String findStr) {
 		int count = 0;
 		int index = 0;
-		while ((index = str.indexOf(findStr, index)) != -1) {
+		for (count = 0; (index = str.indexOf(findStr, index)) != -1; count++) {
 			index = index + findStr.length();
-			count++;
 		}
 		return count;
 	}
