@@ -23,8 +23,9 @@
 
 
 核心代码：
-
+		//创建一个空的字符串
 		String str2 = "";
+		//判断  如果是7的奇数倍就加入逗号，偶数就加入句号，截取添加符号后的字符串 ，写如空字符产str2里
 		for (int i = 0; i < str.length(); i++) {
 			if (i * 7 + 7 > str.length()) {
 				str2 += str.substring(i * 7, str.length());
@@ -37,13 +38,9 @@
 			}
 		}
 		System.out.println(new StringBuilder(str2).toString());
-		String a = "一";
-		int count = count(str, a);
-		System.out.println(a +  "在其中出现的次数为:"
-				+ count);
-	}
-
-	public static int count(StringBuilder str, String findStr) {
+		
+		//查找方法 从头开始 知道-1结束 查找字或词出现的次数
+		public static int count(StringBuilder str, String findStr) {
 		int count = 0;
 		int index = 0;
 		while ((index = str.indexOf(findStr, index)) != -1) {
@@ -55,4 +52,4 @@
 运行截图：
 
 编程感想：
-这次试验总体来说还是不错的，之前有一些java基础，但是好久没接触，有些忘记了，截取字符串出现一些问题，以后看来需要多练习，一些基础都没有熟悉，希望自己在今后学习中多多注意这些细节。
+这次试验总体来说还是不错的，之前有一些java基础，但是好久没接触，有些忘记了，添加符号出现一些问题，尝试过集中方法，但是都会改变字符串的长度，没办法做到换行操作，后来尝试了截取才可以，java可能更需要的是思维，首先要有一个合适的想法才可以写出好的代码，以后看来需要多练习，一些基础都没有熟悉，希望自己在今后学习中多多注意这些细节。
